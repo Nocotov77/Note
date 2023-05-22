@@ -184,3 +184,24 @@ double cost = double.Parse(materialsDataGridView.CurrentRow.Cells[3].Value.ToStr
             }
         }
 ```
+
+### Открыть дополнительную форму
+```csharp
+        private void buttonAddMaterial_Click(object sender, EventArgs e)
+        {
+            Add Add = new Add(); // создаем объект класса Add
+            Add.Show(); // делаем форму видимой
+            this.Hide(); // скрываем текущую форму
+        }
+```
+
+### Закрыть текущую дополнительную форму, раскрыть скрытую главную форму
+```csharp
+        private void Add_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // вызываем главную форму приложения, которая открыла текущую форму
+            // главная форма всегда = 0
+            Form MainForm = Application.OpenForms[0];
+            MainForm.Show(); // делаем главную форму видимой
+        }
+```
