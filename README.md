@@ -205,3 +205,11 @@ double cost = double.Parse(materialsDataGridView.CurrentRow.Cells[3].Value.ToStr
             MainForm.Show(); // делаем главную форму видимой
         }
 ```
+
+### Закрыть форму
+```csharp
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Close(); //текущую форму закрываем
+        }
+```
