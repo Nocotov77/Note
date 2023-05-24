@@ -185,6 +185,36 @@ double cost = double.Parse(materialsDataGridView.CurrentRow.Cells[3].Value.ToStr
         }
 ```
 
+###
+```csharp
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            int loginFindIndex = accountBindingSource.Find("login", loginTextBox.Text);
+            int passFindIndex = accountBindingSource.Find("pass", passTextBox.Text);
+            
+            if (loginFindIndex == passFindIndex && loginFindIndex > -1 && passFindIndex > -1)
+            {
+                accountBindingSource.Position = loginFindIndex;
+                int acessLevel = Convert.ToInt32(((DataRowView)accountBindingSource.Current).Row["acessLevel"]);
+                if (acessLevel == 1)
+                {
+                    loginTextBox.Text = "";
+                    passTextBox.Text = "" ;
+                    MainForm mainForm = new MainForm();
+                    mainForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Гостевой режим.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Неверный логин/пароль.");
+            }
+        }
+```
 ### Открыть дополнительную форму
 ```csharp
         private void buttonAddMaterial_Click(object sender, EventArgs e)
