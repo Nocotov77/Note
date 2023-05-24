@@ -185,7 +185,7 @@ double cost = double.Parse(materialsDataGridView.CurrentRow.Cells[3].Value.ToStr
         }
 ```
 
-###
+### Пример авторизации
 ```csharp
         private void loginButton_Click(object sender, EventArgs e)
         {
