@@ -286,7 +286,7 @@ button2 — кнопка проверки введенных данных
 Свойство: Text = OK; 
 
 После добавления компонентов ваша форма примет приведенный ниже вид:
-  ![Форма с каптчей](https://github.com/Nocotov77/Note/blob/main/capchaform.png?raw=true)
+<br>![Форма с каптчей](https://github.com/Nocotov77/Note/blob/main/capchaform.png?raw=true)</br>
 
 Перейдите в код формы и добавьте следующий метод:
 ```csharp
